@@ -66,11 +66,6 @@ select::-ms-expand {
   display: none;
 }
 
-header, main, section, footer, div, ul, li, h1, h2, h3, dl, dt, dd {
-  background-color: rgba(0, 200, 100, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
 .inner {
   margin: 0 auto;
   max-width: px;
@@ -79,22 +74,89 @@ header, main, section, footer, div, ul, li, h1, h2, h3, dl, dt, dd {
   padding: 0 30px;
 }
 
+.opensans {
+  font-family: "Open Sans", sans-serif;
+}
+
+.textuppercase {
+  text-transform: uppercase;
+}
+
+.btn {
+  border: 1px solid #000;
+  font-family: "Open Sans", sans-serif;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.btn.--reserve {
+  font-size: 14px;
+  padding: 18px 50px;
+}
+
 /* -------------------------------------------- */
 /* header */
 /* -------------------------------------------- */
-.header {
-  border: 1px solid #000;
-}
 .header__wrap {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 30px;
 }
 .header img {
   display: block;
   max-width: 133px;
 }
 
+.menu {
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.1em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.menu.active {
+  display: flex;
+}
+
+.header-nav {
+  line-height: 1.9;
+  font-size: 18px;
+  margin-top: 75px;
+}
+.header-nav__list {
+  margin-top: -30px;
+}
+.header-nav__item {
+  margin-top: 30px;
+}
+
+.sns-list {
+  margin-top: 70px;
+  display: flex;
+  align-items: center;
+}
+.sns-list__item:not(:last-child) {
+  margin-right: 30px;
+}
+.sns-list__image {
+  width: 16px;
+  display: block;
+}
+
+@media (min-width: 765px) {
+  .header__wrap {
+    padding-top: 50px;
+  }
+  .header img {
+    max-width: 286px;
+  }
+}
 /* Hover Event */
 /* -------------------------------------------- */
 /* nav関連 */
@@ -119,39 +181,33 @@ header, main, section, footer, div, ul, li, h1, h2, h3, dl, dt, dd {
   right: 0%;
   transition: all 0.2s;
 }
-
 .bar:nth-of-type(1) {
   transform: translateY(-8px);
   width: 22px;
 }
-
 .bar:nth-of-type(2) {
   transform: translateY(0px);
   width: 17px;
 }
-
 .bar:nth-of-type(3) {
   transform: translateY(8px);
   width: 11px;
 }
 
-/*activeクラスが付与されると線が回転して×になる*/
 .burger.active .bar:nth-of-type(1) {
   top: 7px;
   left: 6px;
-  transform: translateY(6px) rotate(-135deg);
-  width: 16px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 22px;
 }
-
 .burger.active .bar:nth-of-type(2) {
   opacity: 0;
 }
-
 .burger.active .bar:nth-of-type(3) {
   top: 19px;
   left: 6px;
-  transform: translateY(-6px) rotate(135deg);
-  width: 16px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 22px;
 }
 
 /* Hover Event */
