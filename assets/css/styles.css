@@ -68,9 +68,8 @@ select::-ms-expand {
 
 .inner {
   margin: 0 auto;
-  max-width: px;
+  max-width: 1046px;
   width: 100%;
-  background-color: rgba(241, 92, 168, 0.2);
   padding: 0 30px;
 }
 
@@ -87,24 +86,44 @@ select::-ms-expand {
   font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
   line-height: 1;
+  text-align: center;
+  display: block;
 }
-.btn.--reserve {
+.btn.--sp-menu {
   font-size: 14px;
   padding: 18px 50px;
 }
+.btn.--cta {
+  font-size: 13px;
+  padding: 15px 50px;
+}
 
+.site-title img {
+  display: block;
+  max-width: 133px;
+}
+
+.mt50 {
+  margin-top: 50px;
+}
+
+@media (min-width: 765px) {
+  .site-title img {
+    max-width: 286px;
+  }
+  .site-title.--footer img {
+    max-width: 206px;
+  }
+}
 /* -------------------------------------------- */
 /* header */
 /* -------------------------------------------- */
 .header__wrap {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 30px;
-}
-.header img {
-  display: block;
-  max-width: 133px;
 }
 
 .menu {
@@ -151,10 +170,39 @@ select::-ms-expand {
 
 @media (min-width: 765px) {
   .header__wrap {
-    padding-top: 50px;
+    padding: 50px 70px 0;
   }
-  .header img {
-    max-width: 286px;
+  .menu {
+    width: auto;
+    height: auto;
+    position: static;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+  }
+  .header-nav {
+    font-size: 14px;
+    margin-top: 0px;
+  }
+  .header-nav__list {
+    margin-top: 0px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .header-nav__item {
+    margin-top: 0px;
+    margin-left: 40px;
+  }
+  .sns-list {
+    margin-top: 0px;
+    margin-left: 80px;
+  }
+  .sns-list__image {
+    width: 16px;
+  }
+  .btn.--sp-menu {
+    display: none;
   }
 }
 /* Hover Event */
@@ -210,42 +258,255 @@ select::-ms-expand {
   width: 22px;
 }
 
+@media (min-width: 765px) {
+  .burger {
+    display: none;
+  }
+}
 /* Hover Event */
 /* -------------------------------------------- */
-/*  */
+/* mv */
 /* -------------------------------------------- */
+.mv__catch {
+  text-align: center;
+}
+
 /* Hover Event */
 /* -------------------------------------------- */
-/*  */
+/* about */
 /* -------------------------------------------- */
+section {
+  padding: 50px 0;
+}
+
+.heading--en {
+  font-family: "Open Sans", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.top-page-heading__en {
+  font-size: 13px;
+  position: relative;
+  line-height: 1;
+  padding-bottom: 10px;
+}
+.top-page-heading__en::before {
+  content: "";
+  width: 8px;
+  height: 1px;
+  background-color: #656565;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.top-page-heading__jp {
+  font-size: 17px;
+  margin-top: 30px;
+  line-height: 1.6;
+}
+
+.top-page-subheading {
+  font-size: 10px;
+  display: inline-block;
+  color: #656565;
+  opacity: 0.85;
+  transform: scale(0.7);
+  transform-origin: 0, 0;
+}
+
+.top-page_desc {
+  font-size: 12px;
+  margin-top: 40px;
+}
+
+.image-desc {
+  color: #9A9191;
+  font-size: 10px;
+  margin-top: 30px;
+  line-height: 1;
+}
+
+/* viewmoreボタン */
+.viewmore {
+  font-size: 0.625rem;
+  border-bottom: 1px solid #707070;
+  display: block;
+  width: 100%;
+  padding-bottom: 10px;
+  position: relative;
+  line-height: 1;
+}
+.viewmore::before, .viewmore::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  background: #000;
+  width: 100%;
+  height: 2px;
+  transition: all 0.3s ease-in-out;
+}
+.viewmore::after {
+  width: 0;
+  background: #ccc;
+}
+.viewmore:hover::after {
+  width: 100%;
+}
+.viewmore span::after {
+  content: "";
+  position: absolute;
+  top: 0.3em;
+  right: 1px;
+  width: 5px;
+  height: 5px;
+  border-top: 1px solid #000;
+  border-right: 1px solid #000;
+  transform: rotate(45deg);
+  transition: all 0.3s;
+}
+.viewmore:hover span::after {
+  right: 15px;
+}
+
+.mt40 {
+  margin-top: 40px;
+}
+
 /* Hover Event */
 /* -------------------------------------------- */
-/*  */
+/* style */
 /* -------------------------------------------- */
+.style__slide-desc {
+  margin-top: 35px;
+  font-size: 10px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: 0.1em;
+}
+
 /* Hover Event */
 /* -------------------------------------------- */
-/*  */
+/* top-menu */
 /* -------------------------------------------- */
+.top-menu__image {
+  margin-left: calc(50% - 50vw);
+}
+
 /* Hover Event */
 /* -------------------------------------------- */
-/*  */
+/* top-bg */
 /* -------------------------------------------- */
+.top-bg {
+  background: url(../images/tool-big-image-sp.jpg) center/cover no-repeat;
+  height: 246px;
+  width: 100%;
+}
+
 /* Hover Event */
 /* -------------------------------------------- */
-/*  */
+/* top-salon */
 /* -------------------------------------------- */
+.top-salon__image {
+  margin-right: calc(50% - 50vw);
+}
+
 /* Hover Event */
 /* -------------------------------------------- */
-/*  */
+/* top-access */
 /* -------------------------------------------- */
+.access__table {
+  margin-top: 20px;
+}
+.access__table th {
+  font-weight: normal;
+  padding-right: 40px;
+  text-align: left;
+  color: #7B7B7B;
+  letter-spacing: 0.1em;
+}
+.access__table .open {
+  text-align: right;
+}
+
+.close__text {
+  font-size: 13px;
+}
+
+.google-map-link {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
 /* Hover Event */
 /* -------------------------------------------- */
-/*  */
+/* cta */
 /* -------------------------------------------- */
+.cta__image {
+  width: 58%;
+  margin: 0 auto;
+}
+.cta__image img {
+  width: 100%;
+}
+
+.btn-cont {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+.btn-cont .btn-wrap {
+  width: calc((100% - 14px) / 2);
+}
+
 /* Hover Event */
 /* -------------------------------------------- */
-/*  */
+/* footer */
 /* -------------------------------------------- */
+.footer {
+  border-top: 1px solid #E8E8E8;
+  padding: 46px 0;
+}
+.footer-list__title {
+  color: #656565;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  margin-right: 50px;
+}
+.footer__access {
+  display: flex;
+}
+.footer__sitemap {
+  display: flex;
+}
+.footer-sns__wrap {
+  display: flex;
+}
+
+.footer-nav__list {
+  font-size: 10px;
+}
+
+.footer-access {
+  display: flex;
+}
+.footer-access__name {
+  font-weight: 900;
+}
+.footer-access__postnum {
+  margin-top: 30px;
+}
+.footer-access__address {
+  line-height: 1;
+  margin-top: 6px;
+}
+.footer-access__map {
+  margin-top: 20px;
+}
+
 /* Hover Event */
 /* -------------------------------------------- */
 /*  */
