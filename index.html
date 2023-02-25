@@ -15,12 +15,13 @@
 <body>
   <header id="header" class="header">
     <div class="header__wrap">
+
       <h1 class="site-title">
         <a href="#" class="site-title__link">
           <picture class="mv-bottom__image">
             <source media="(max-width: 767px)" srcset="assets/images/header-logo-sp.png">
             <source media="(min-width: 768px)" srcset="assets/images/header-logo-pc.png">
-            <img src="assets/images/header-logo-sp.png" alt="">
+            <img src="assets/images/header-logo-sp.png" alt="Ryo Murayama">
           </picture>
         </a>
       </h1>
@@ -35,7 +36,7 @@
       <div class="menu">
 
         <div class="btn-wrap">
-          <a href="" class="btn --sp-menu">Reserve</a>
+          <a href="" class="btn --reserve">Reserve</a>
         </div>
 
         <nav class="nav header-nav opensans textuppercase">
@@ -65,7 +66,7 @@
       <p class="mv__catch">ラフな髪型でラフにお洒落しよう。</p>
 
       <div class="slide">
-        <!-- <img src="assets/images/mv-image-01.jpg" alt=""> -->
+        <img src="assets/images/mv-image-01.jpg" alt="">
       </div>
     </div>
     <!-- mv -->
@@ -224,7 +225,7 @@
           </div>
 
           <div class="btn-wrap">
-            <a href="" class="btn --cta">reserve</a>
+            <a href="" class="btn --cta reserve-icon">reserve</a>
           </div>
 
         </div>
@@ -251,7 +252,7 @@
       </div>
       <!-- site-title -->
   
-      <div class="footer-access">
+      <div class="footer-access flex mt50">
         <p class="footer-list__title textuppercase opensans">access</p>
 
         <div class="footer-access__wrap">
@@ -264,11 +265,11 @@
       </div>
       <!-- footer-access -->
   
-      <div class="footer-sitemap">
+      <div class="footer-sitemap flex mt50">
         <p class="footer-list__title textuppercase opensans">sitemap</p>
   
         <nav class="nav footer-nav opensans textuppercase">
-          <ul class="footer-nav__list opensans">
+          <ul class="footer-nav__list column-wrap opensans">
             <li class="nav-list__item footer-nav__item"><a href="#" class="nav-list__link footer-nav__link">about</a></li>
             <li class="nav-list__item footer-nav__item"><a href="#" class="nav-list__link footer-nav__link">style</a></li>
             <li class="nav-list__item footer-nav__item"><a href="#" class="nav-list__link footer-nav__link">menu</a></li>
@@ -280,20 +281,30 @@
       </div>
       <!-- footer-sitemap -->
   
-      <div class="footer-sns-wrap">
-        <p class="footer-list__title textuppercase opensans">sns</p>
-        <ul class="footer-sns__list">
-          <li class="footer-sns__item"><a href="" class="footer-sns__link"><img src="assets/images/footer-sns-insta-sp.jpg" alt="" class="footer-sns__image"></a></li>
-          <li class="footer-sns__item"><a href="" class="footer-sns__link"><img src="assets/images/footer-sns-line-sp.jpg" alt="" class="footer-sns__image"></a></li>
-          <li class="footer-sns__item"><a href="" class="footer-sns__link"><img src="assets/images/footer-sns-youtube-sp.jpg" alt="" class="footer-sns__image"></a></li>
+      <div class="footer-sns-wrap flex opensans mt50">
+        <p class="footer-list__title textuppercase">sns</p>
+
+        <ul class="footer-sns__list column-wrap">
+          <li class="footer-sns__item"><a href="" class="footer-sns__link"><img src="assets/images/icons-instagram.png" alt="" class="footer-sns__image">instagram</a></li>
+          <li class="footer-sns__item"><a href="" class="footer-sns__link"><img src="assets/images/icons-line.png" alt="" class="footer-sns__image">LINE</a></li>
+          <li class="footer-sns__item"><a href="" class="footer-sns__link"><img src="assets/images/icons-youtube.png" alt="" class="footer-sns__image">Youtube</a></li>
         </ul>
   
       </div>
       <!-- footer-sns-wrap -->
       
-      <p> ©︎ Ryo Murayama</p>
+      <p class="footer__copy opensans">©︎ Ryo Murayama</p>
     </div>
     <!-- inner -->
+
+    <div class="btn-wrap">
+      <a href="" class="btn --reserve spfixed reserve-icon">reserve</a>
+    </div>
+
+    <div class="btn-wrap">
+      <a href="" class="btn --reserve pcfixed">reserve</a>
+    </div>
+
   </footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="assets/js/main.js"></script>

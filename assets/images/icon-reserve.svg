@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="14" viewBox="0 0 12 14">
+  <g id="グループ_343" data-name="グループ 343" transform="translate(-965 -6938)">
+    <g id="長方形_889" data-name="長方形 889" transform="translate(965 6940)" fill="#fff" stroke="#000" stroke-width="1">
+      <rect width="12" height="12" stroke="none"/>
+      <rect x="0.5" y="0.5" width="11" height="11" fill="none"/>
+    </g>
+    <g id="長方形_891" data-name="長方形 891" transform="translate(968 6938)" fill="#fff" stroke="#000" stroke-width="1">
+      <rect width="1" height="3" stroke="none"/>
+      <rect x="0.5" y="0.5" height="2" fill="none"/>
+    </g>
+    <g id="長方形_892" data-name="長方形 892" transform="translate(973 6938)" fill="#fff" stroke="#000" stroke-width="1">
+      <rect width="1" height="3" stroke="none"/>
+      <rect x="0.5" y="0.5" height="2" fill="none"/>
+    </g>
+    <rect id="長方形_916" data-name="長方形 916" width="12" height="3" transform="translate(965 6940)"/>
+  </g>
+</svg>
