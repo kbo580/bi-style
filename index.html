@@ -62,34 +62,35 @@
   </header>
 
   <main>
-    <div class="mv">
+    <!-- <div class="mv">
       <p class="mv__catch">ラフな髪型でラフにお洒落しよう。</p>
 
       <div class="slide">
         <img src="assets/images/mv-image-01.jpg" alt="">
       </div>
-    </div>
+    </div> -->
     <!-- mv -->
 
     <section class="top-about">
       <div class="inner">
 
-        <div class="top-about__wrap">
+        <div class="top-about__cont">
   
-          <div class="top-about__left">
-            <div class="top-about__image">
-              <img src="assets/images/about-image-sp.jpg" alt="" class="">
-            </div>
+          <div class="top-about__left left-cont">
+            <picture class="top-about__image">
+              <source media="(max-width: 767px)" srcset="assets/images/top-about-image-sp.jpg">
+              <source media="(min-width: 768px)" srcset="assets/images/top-about-image-pc.jpg">
+              <img src="assets/images/top-about-image-sp.jpg" alt="Ryo Murayama">
+            </picture>
             <!-- /top-about__image -->
-  
-            <!-- <span>Ryo Murayama</span> -->
   
           </div>
           <!-- /top-about__left -->
           
-          <div class="top-about__right">
-            <h2 class="heading--en top-page-heading__en">about<span class="top-page-subheading">僕について</span></h2>
-            <h3 class="top-page-heading__jp">東京・表参道のメンズ専門美容師。</h3>
+          <div class="top-about__right right-cont">
+            <h2 class="heading top-page-heading en border">about<span class="heading jp">僕について</span></h2>
+
+            <h3 class="sub-heading">東京・表参道のメンズ専門美容師。</h3>
             
             <p class="top-page_desc">初めまして！東京・表参道のメンズ専門のフリーランス美容師、村山諒です！<br>「 ラフにお洒落しよう。」というコンセプトのもと受付からお見送りまで完全マンツーマンで施術させていただきます！<br>お客様のファッションからヘアを提案し、似合わせます。ここでは僕のファッションやライフスタイルを紹介します！</p>
               
@@ -100,34 +101,37 @@
           <!-- /top-about__right -->
   
         </div>
-        <!-- /top-about__wrap -->
+        <!-- /top-about__cont -->
       
       </div>
       <!-- inner -->
       
-
     </section>
     <!-- top-about -->
 
-    <section class="style">
+    <section class="top-style">
       <div class="inner">
 
         <div class="top-style__wrap">
-          
-          <h2 class="heading--en top-page-heading__en">style<span class="top-page-subheading">スタイル</span></h2>
+          <h2 class="heading top-page-heading en border mt50">style<span class="heading jp">スタイル</span></h2>
 
-          <p class="style__slide-desc opensans">Style01  center pert</p>
+          <p class="top-style__slide-desc opensans">Style01  center pert</p>
 
           <div>
             <img src="assets/images/style-img-01.jpg" alt="">
           </div>
-          <h3 class="top-page-heading__jp">ラフな髪型をファッションに合わせて提案します。</h3>
-          
-          <p class="top-page_desc"><br>僕の理想の完成されたスタイルはスタイリングする時も鏡を見なくても大丈夫！そんなヘアスタイルがラフでお洒落！</p>
+
+          <div class="top-style__body">
+            <h3 class="sub-heading">ラフな髪型をファッションに合わせて提案します。</h3>
             
-          <p class="image-desc">上/お洒落になったお客さんたち。</p>
-          
-          <a href="" class="viewmore mt40"><span>VIEWMORE</span></a>
+            <p class="top-page_desc"><br>僕の理想の完成されたスタイルはスタイリングする時も鏡を見なくても大丈夫！そんなヘアスタイルがラフでお洒落！</p>
+              
+            <p class="image-desc">上/お洒落になったお客さんたち。</p>
+            
+            <a href="" class="viewmore mt40"><span>VIEWMORE</span></a>
+            
+          </div>
+          <!-- top-style__body -->
           
         </div>
         <!-- /top-style__wrap -->
@@ -140,19 +144,32 @@
 
     <section class="top-menu">
       <div class="inner">
-        <div class="top-menu__image">
-          <img src="assets/images/menu-img-01-sp.jpg" alt="">
+
+        <div class="top-menu__cont">
+
+          <div class="top-menu__left left-cont">
+            <picture class="top-menu__image">
+              <source media="(max-width: 767px)" srcset="assets/images/top-menu-image-sp.jpg">
+              <source media="(min-width: 768px)" srcset="assets/images/top-menu-image-pc.jpg">
+              <img src="assets/images/top-menu-image-sp.jpg" alt="左下/僕の相棒。右上/お客さんの髪を切る僕。">
+            </picture>
+            <!-- /top-menu__image -->
+          </div>
+          <!-- /top-menu__left -->
+
+          <div class="top-menu__right right-cont">
+            <h2 class="heading top-page-heading en border mt50">menu<span class="heading jp">メニュー</span></h2>
+            <h3 class="sub-heading">豊富なメニューがあります！</h3>
+              
+            <p class="top-page_desc"><br>すべての施術前にしっかりとカウンセリングを行い、お客様の悩みやご希望に合わせたアドバイスをします。メニューは豊富に用意！</p>
+    
+            <p class="image-desc">左下/僕の相棒。右上/お客さんの髪を切る僕。</p>
+              
+            <a href="" class="viewmore mt40"><span>VIEWMORE</span></a>
+          </div>
+          <!-- top-menu__right -->
         </div>
-
-        <h2 class="heading--en top-page-heading__en mt50">menu<span class="top-page-subheading">メニュー</span></h2>
-
-        <h3 class="top-page-heading__jp">豊富なメニューがあります！</h3>
-          
-        <p class="top-page_desc"><br>すべての施術前にしっかりとカウンセリングを行い、お客様の悩みやご希望に合わせたアドバイスをします。メニューは豊富に用意！</p>
-
-        <p class="image-desc">左下/僕の相棒。右上/お客さんの髪を切る僕。</p>
-          
-        <a href="" class="viewmore mt40"><span>VIEWMORE</span></a>
+        <!-- top-menu__cont -->
 
       </div>
       <!-- inner -->
@@ -161,21 +178,43 @@
     
 
     <div class="top-bg"> 
-
+      <picture class="top-bg__image">
+        <source media="(max-width: 767px)" srcset="assets/images/tool-big-image-sp.jpg">
+        <source media="(min-width: 768px)" srcset="assets/images/tool-big-image-pc.jpg">
+        <img src="assets/images/tool-big-image-sp.jpg" alt="左下/僕の相棒。右上/お客さんの髪を切る僕。">
+      </picture>
+      <!-- /top-menu__image -->
     </div>
+    <!-- top-bg -->
 
     <section class="top-salon">
       <div class="inner">
-        
-        <h2 class="heading--en top-page-heading__en mt50">salon<span class="top-page-subheading">サロン</span></h2>
-        
-        <h3 class="top-page-heading__jp">東京・表参道にある超隠れ家サロン。</h3>
-        
-        <p class="top-page_desc">東京・表参道にあるシェアサロン「 Oneday 」 。サロン周りはとても静かで隠れ家な落ち着けるサロンです！ここでは落ち着いた雰囲気のサロンの内装を紹介します！</p>
-        
-        <p class="image-desc">右上/サロンの看板。左下/僕のお客さんのためだけの席。</p>
-        
-        <a href="" class="viewmore mt40"><span>VIEWMORE</span></a>
+
+        <div class="top-salon__cont">
+          <div class="top-salon__left left-cont">
+            <h2 class="heading top-page-heading en border mt50">salon<span class="heading jp">サロン</span></h2>
+            <h3 class="sub-heading">東京・表参道にある超隠れ家サロン。</h3>
+  
+            <p class="top-page_desc">東京・表参道にあるシェアサロン「 Oneday 」 。<br class="sp-none">サロン周りはとても静かで隠れ家な落ち着けるサロンです！ここでは落ち着いた雰囲気のサロンの内装を紹介します！</p>
+            
+            <p class="image-desc">右上/サロンの看板。左下/僕のお客さんのためだけの席。</p>
+            
+            <a href="" class="viewmore mt40"><span>VIEWMORE</span></a>
+          </div>
+          <!-- top-salon__left left-cont -->
+
+          <div class="top-salon__right right-cont">
+            <picture class="top-menu__image">
+              <source media="(max-width: 767px)" srcset="assets/images/salon-image-sp.jpg">
+              <source media="(min-width: 768px)" srcset="assets/images/salon-image-pc.jpg">
+              <img src="assets/images/salon-image-sp.jpg" alt="左下/僕の相棒。右上/お客さんの髪を切る僕。">
+            </picture>
+            <!-- /top-menu__image -->
+          </div>
+          <!-- /top-salon__left -->
+        </div>
+        <!-- top-salon__cont -->
+
 
         <div class="top-salon__image mt40">
           <img src="assets/images/salon-img-01-sp.jpg" alt="">
@@ -188,8 +227,7 @@
 
     <section class="top-access">
       <div class="inner">
-        
-        <h2 class="heading--en top-page-heading__en mt50">access<span class="top-page-subheading">アクセス</span></h2>
+        <h2 class="heading top-page-heading en border mt50">access<span class="heading jp">アクセス</span></h2>
         
         <h3 class="top-page-heading__jp">シェアサロン「 Oneday 」 </h3>
         

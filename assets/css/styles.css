@@ -69,17 +69,74 @@ select::-ms-expand {
 
 .inner {
   margin: 0 auto;
-  max-width: 1046px;
+  max-width: 1100px;
   width: 100%;
   padding: 0 30px;
 }
 
-.opensans {
+/*----- 見出し -----*/
+.heading {
+  font-weight: 600;
+}
+
+/* 英語タイトル */
+.en {
+  text-transform: uppercase;
   font-family: "Open Sans", sans-serif;
 }
 
-.textuppercase {
-  text-transform: uppercase;
+/* 日本語タイトル */
+.jp {
+  font-size: 10px;
+  display: inline-block;
+  color: #656565;
+  opacity: 0.85;
+  transform: scale(0.7);
+  transform-origin: 0, 0;
+}
+
+/* Topページの見出し */
+.top-page-heading {
+  font-size: 13px;
+  position: relative;
+  padding-bottom: 10px;
+  line-height: 1;
+  letter-spacing: 0.1em;
+}
+
+/* あしらい */
+.border {
+  position: relative;
+}
+.border::before {
+  content: "";
+  width: 8px;
+  height: 1px;
+  background-color: #656565;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* Topページの見出しの下のheading */
+.sub-heading {
+  font-size: 17px;
+  margin-top: 30px;
+  line-height: 1.6;
+}
+
+/* lead文 */
+.top-page_desc {
+  font-size: 12px;
+  margin-top: 40px;
+}
+
+/* 画像の注釈 */
+.image-desc {
+  color: #9A9191;
+  font-size: 10px;
+  margin-top: 30px;
+  line-height: 1;
 }
 
 /*----- ボタン関連-----*/
@@ -138,21 +195,118 @@ select::-ms-expand {
   margin-left: 10px;
 }
 
-.site-title img {
+/* viewmoreボタン */
+.viewmore {
+  font-size: 0.625rem;
   display: block;
-  max-width: 133px;
+  width: 100%;
+  padding-bottom: 10px;
+  position: relative;
+  line-height: 1;
+}
+.viewmore::before, .viewmore::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  background: #707070;
+  width: 100%;
+  height: 1px;
+  transition: all 0.3s ease-in-out;
+}
+.viewmore::after {
+  width: 0;
+  background: #ccc;
+}
+.viewmore:hover::after {
+  width: 100%;
+}
+.viewmore span::after {
+  content: "";
+  position: absolute;
+  top: 0.3em;
+  right: 20px;
+  width: 5px;
+  height: 5px;
+  border-top: 1px solid #000;
+  border-right: 1px solid #000;
+  transform: rotate(45deg);
+  transition: all 0.3s;
+}
+.viewmore:hover span::after {
+  right: 15px;
+}
+
+/*----- 余白 -----*/
+section {
+  padding: 50px 0;
+}
+
+.mt40 {
+  margin-top: 40px;
 }
 
 .mt50 {
   margin-top: 50px;
 }
 
+.opensans {
+  font-family: "Open Sans", sans-serif;
+}
+
+.textuppercase {
+  text-transform: uppercase;
+}
+
+.sp-none {
+  display: none;
+}
+
+/* サイトタイトル */
+.site-title img {
+  display: block;
+  max-width: 133px;
+}
+
 @media (min-width: 765px) {
-  .site-title img {
-    max-width: 286px;
+  .inner {
+    padding: 0 27px;
   }
-  .site-title.--footer img {
-    max-width: 206px;
+  /*----- 見出し -----*/
+  .heading {
+    font-weight: 600;
+  }
+  /* 英語タイトル */
+  .en {
+    text-transform: uppercase;
+    font-family: "Open Sans", sans-serif;
+  }
+  /* 日本語タイトル */
+  .jp {
+    font-size: 11px;
+    transform: scale(1);
+    margin-left: 10px;
+  }
+  /* Topページの見出し */
+  .top-page-heading {
+    font-size: 17px;
+    padding-bottom: 18px;
+  }
+  /* Topページの見出しの下のheading */
+  .sub-heading {
+    font-size: 21px;
+    margin-top: 50px;
+  }
+  /* lead文 */
+  .top-page_desc {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+  /* 画像の注釈 */
+  .image-desc {
+    font-size: 13px;
+    margin-top: 45px;
   }
   /*----- ボタン関連-----*/
   .btn {
@@ -172,6 +326,29 @@ select::-ms-expand {
     display: none;
   }
   .btn.--reserve.pcfixed {
+    display: block;
+  }
+  /* viewmoreボタン */
+  .viewmore {
+    font-size: 0.8125rem;
+    letter-spacing: 0.1em;
+  }
+  .site-title img {
+    max-width: 286px;
+  }
+  .site-title.--footer img {
+    max-width: 206px;
+  }
+  .left-cont {
+    border: 2px solid red;
+  }
+  .right-cont {
+    border: 2px solid green;
+  }
+  .mt40 {
+    margin-top: 75px;
+  }
+  .sp-none {
     display: block;
   }
 }
@@ -234,13 +411,13 @@ select::-ms-expand {
     padding: 50px 70px 0;
   }
   .menu {
-    width: 100%;
+    width: auto;
     height: auto;
     position: static;
+    display: block;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
   }
   .header-nav {
     font-size: 14px;
@@ -258,6 +435,7 @@ select::-ms-expand {
   .sns-list {
     margin-top: 0px;
     margin-left: 80px;
+    margin-left: 6.6666666667vw;
     min-width: 100px;
   }
   .sns-list__image {
@@ -344,146 +522,80 @@ select::-ms-expand {
 
 /* Hover Event */
 /* -------------------------------------------- */
-/* about */
+/* top-about */
 /* -------------------------------------------- */
-section {
-  padding: 50px 0;
-}
-
-.heading--en {
-  font-family: "Open Sans", sans-serif;
-  text-transform: uppercase;
-  font-weight: 600;
-}
-
-.top-page-heading__en {
-  font-size: 13px;
-  position: relative;
-  line-height: 1;
+.top-about__left {
+  margin-left: calc(50% - 50vw);
   padding-bottom: 10px;
 }
-.top-page-heading__en::before {
-  content: "";
-  width: 8px;
-  height: 1px;
-  background-color: #656565;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+@media (min-width: 765px) {
+  .top-about__cont {
+    display: flex;
+  }
+  .top-about__left {
+    margin-left: auto;
+  }
+  .top-about__right {
+    padding-left: 30px;
+  }
 }
-.top-page-heading__jp {
-  font-size: 17px;
-  margin-top: 30px;
-  line-height: 1.6;
-}
-
-.top-page-subheading {
-  font-size: 10px;
-  display: inline-block;
-  color: #656565;
-  opacity: 0.85;
-  transform: scale(0.7);
-  transform-origin: 0, 0;
-}
-
-.top-page_desc {
-  font-size: 12px;
-  margin-top: 40px;
-}
-
-.image-desc {
-  color: #9A9191;
-  font-size: 10px;
-  margin-top: 30px;
-  line-height: 1;
-}
-
-/* viewmoreボタン */
-.viewmore {
-  font-size: 0.625rem;
-  border-bottom: 1px solid #707070;
-  display: block;
-  width: 100%;
-  padding-bottom: 10px;
-  position: relative;
-  line-height: 1;
-}
-.viewmore::before, .viewmore::after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  bottom: 0;
-  left: 0;
-  background: #000;
-  width: 100%;
-  height: 2px;
-  transition: all 0.3s ease-in-out;
-}
-.viewmore::after {
-  width: 0;
-  background: #ccc;
-}
-.viewmore:hover::after {
-  width: 100%;
-}
-.viewmore span::after {
-  content: "";
-  position: absolute;
-  top: 0.3em;
-  right: 1px;
-  width: 5px;
-  height: 5px;
-  border-top: 1px solid #000;
-  border-right: 1px solid #000;
-  transform: rotate(45deg);
-  transition: all 0.3s;
-}
-.viewmore:hover span::after {
-  right: 15px;
-}
-
-.mt40 {
-  margin-top: 40px;
-}
-
 /* Hover Event */
 /* -------------------------------------------- */
-/* style */
+/* top-style */
 /* -------------------------------------------- */
-.style__slide-desc {
+.top-style__slide-desc {
   margin-top: 35px;
   font-size: 10px;
   font-weight: 300;
   line-height: 1;
   letter-spacing: 0.1em;
 }
+.top-style__body {
+  border: 1px solid #000;
+}
 
 /* Hover Event */
 /* -------------------------------------------- */
 /* top-menu */
 /* -------------------------------------------- */
-.top-menu__image {
+.top-menu__left {
   margin-left: calc(50% - 50vw);
 }
 
+@media (min-width: 765px) {
+  .top-menu__cont {
+    display: flex;
+  }
+  .top-menu__right {
+    width: 66%;
+    padding-left: 80px;
+  }
+}
 /* Hover Event */
 /* -------------------------------------------- */
 /* top-bg */
 /* -------------------------------------------- */
-.top-bg {
-  background: url(../images/tool-big-image-sp.jpg) center/cover no-repeat;
-  height: 246px;
+.top-bg img {
+  max-height: 562px;
+  display: block;
   width: 100%;
 }
 
-/* Hover Event */
 /* -------------------------------------------- */
 /* top-salon */
 /* -------------------------------------------- */
-.top-salon__image {
+.top-salon__right {
   margin-right: calc(50% - 50vw);
 }
 
+@media (min-width: 765px) {
+  .top-salon__cont {
+    display: flex;
+  }
+  .top-salon__left {
+    padding-right: 80px;
+  }
+}
 /* Hover Event */
 /* -------------------------------------------- */
 /* top-access */
