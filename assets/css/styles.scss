@@ -290,6 +290,7 @@ section{
   display: none;
 }
 
+
 /* サイトタイトル */
 .site-title{
   img{
@@ -388,20 +389,24 @@ section{
     }
   }
 
-  .left-cont{
-    border: 2px solid red;
-  }
-
-  .right-cont{
-    border: 2px solid green;
-  }
-
   .mt40 {
     margin-top: 75px;
   }
 
+  .mt50 {
+    margin-top: 0px;
+  }
+
   .sp-none{
     display: block;
+  }
+
+  .pc-none{
+    display: none;
+  }
+
+  .pc-mt180{
+    margin-top: 180px;
   }
 
 }
@@ -765,6 +770,10 @@ section{
   &__right{
     margin-right: calc(50% - 50vw);
   }
+
+  &__right{
+    margin-top: 40px;
+  }
 }
 
 @media (min-width: 765px) {
@@ -776,6 +785,10 @@ section{
 
     &__left{
       padding-right: 80px;
+    }
+
+    &__right{
+      margin-top: -50px;
     }
   }
 
@@ -789,9 +802,30 @@ section{
 /* -------------------------------------------- */
 /* top-access */
 /* -------------------------------------------- */
-.access{
+.top-access{
+
+  &__wrap{
+    padding-left: 36px;
+  }
+
+  &__desc{
+    position: relative;
+    padding-bottom: 40px;
+
+    &::before{
+      content:"";
+      background: #000;
+      width: 123px;
+      width: calc(123 / 1046 *100vw);
+      height: 1px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+  }
+
   &__table{
-    margin-top: 20px;
+    margin-top: 40px;
 
     th{
       font-weight: normal;
@@ -804,6 +838,10 @@ section{
       text-align: right;
     }
   }
+
+  &__left{
+    margin-top: 60px;
+  }
 }
 
 .close__text{
@@ -814,10 +852,68 @@ section{
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.1em;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+
+  &::before{
+    content:"";
+    background: url(../images/icon-pin.svg) center/cover no-repeat;
+    width: 10px;
+    height: 15px;
+    display: inline-block;
+    margin-right: 6px;
+  }
 }
 
 @media (min-width: 765px) {
+  .top-access{
 
+    &__cont{
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__wrap{
+      padding-left: 0px;
+    }
+  
+    &__table{
+      margin-top: 45px;
+      font-size: 16px;
+  
+      th{
+        padding-right: 65px;
+      }
+    }
+  
+    &__left{
+      width: calc(600 / 1046 *100vw);
+      max-width: 600px;
+    }
+
+    &__right{
+      margin-top: 0px;
+      padding-left: 100px;
+    }
+  }
+  
+  .close__text{
+    font-size: 16px;
+  }
+  
+  .google-map-link{
+    font-size: 14px;
+    margin-top: 50px;
+  
+    &::before{
+      width: 13px;
+      height: 19px;
+      margin-right: 10px;
+    }
+  }
 
 }
 
@@ -827,12 +923,14 @@ section{
 }
 
 /* -------------------------------------------- */
-/* cta */
+/* top-cta */
 /* -------------------------------------------- */
-.cta{
+.top-cta{
   &__image{
     width: 58%;
+    display: block;
     margin: 0 auto;
+
     img{
       width: 100%;
     }
@@ -849,7 +947,22 @@ section{
 }
 
 @media (min-width: 765px) {
-
+  .top-cta{
+    max-width: 708px;
+    margin: 0 auto;
+    &__image{
+      width: 100%;
+    }
+  }
+  .btn-cont{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+  
+    .btn-wrap{
+      width: calc((100% - 14px)/2);
+    }
+  }
 
 }
 
@@ -865,6 +978,7 @@ section{
   border-top: 1px solid #E8E8E8;
   padding: 46px 0;
   line-height: 1.4;
+  margin-top: 100px;
 
   &-list__title {
     color:#656565;
@@ -887,15 +1001,16 @@ section{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  background-color: pink;
 }
 
-.flex{
+/* footerのflex */
+.footer-flex{
   display: flex;
 }
 
 /* -----アクセス----- */
 .footer-access{
+  font-size: 10px;
 
   &__wrap{
     flex:1;
@@ -915,12 +1030,21 @@ section{
 
   &__map{
     margin-top: 20px;
+
+    &::before{
+      content:"";
+      background: url(../images/icon-pin.svg) center/cover no-repeat;
+      width: 7px;
+      height: 10px;
+      display: inline-block;
+      margin-right: 8px;
+    }
   }
 }
 
-
 /*----- サイトマップ -----*/
 .footer-sitemap{
+
   .footer-nav{
     flex:1;
 
@@ -938,11 +1062,7 @@ section{
   }
 }
 
-
 /*----- snsリンク -----*/
-.footer-sns-wrap{
-
-}
 .footer-sns{
 
   &__list{
@@ -974,7 +1094,106 @@ section{
 }
 
 @media (min-width: 765px) {
+  .footer{
+    padding: 80px 0;
+    margin-top: 240px;
 
+    &__cont{
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    &-list__title {
+      font-size: 14px;
+      margin-right: 0px;
+    }
+  
+    &__copy{
+      font-size: 11px;
+      margin-top: 30px;
+    }
+  }
+
+  /* sp用折り返し */
+  .column-wrap{
+    display: block;
+  }
+
+  /* footerのflex */
+  .footer-flex{
+    flex-direction: column;
+  }
+
+  /* -----アクセス----- */
+  .footer-access{
+    font-size: 13px;
+
+    &__wrap{
+      margin-top: 30px;
+    }
+
+    &__postnum{
+      margin-top: 24px;
+    }
+
+    &__map{
+      margin-top: 40px;
+      &::before{
+        width: 10px;
+        height: 15px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  /*----- サイトマップ -----*/
+  .footer-sitemap{
+
+    .footer-nav{
+
+      &__list{
+        height: auto;
+        font-size: 14px; 
+        letter-spacing: 0.1em;
+        margin-top: 30px;
+      }
+
+      &__item{
+        margin-top: 20px;
+        
+        &:not(:first-child):not(:nth-child(4)){
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+  
+  /*----- snsリンク -----*/
+  .footer-sns{
+
+    &__list{
+      height: auto;
+      margin-top: 6px;
+    }
+    
+    &__item{
+      &:nth-child(even){
+        margin-top: 24px;
+      }
+    }
+    
+    &__link{
+      font-size: 11px;
+    }
+
+    &__item{
+      margin-top: 24px;
+    }
+    
+    &__image{
+      margin-right: 14px;
+    }
+  }
 
 }
 
