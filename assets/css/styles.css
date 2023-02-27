@@ -72,6 +72,7 @@ select::-ms-expand {
   max-width: 1100px;
   width: 100%;
   padding: 0 30px;
+  border: 1px solid pink;
 }
 
 /*----- 見出し -----*/
@@ -148,7 +149,8 @@ select::-ms-expand {
 .page-lead {
   font-size: 12px;
   max-width: 600px;
-  margin: 40px auto 0;
+  margin: 0px auto;
+  padding: 40px 0 160px;
 }
 
 /* パンクズ */
@@ -232,7 +234,7 @@ select::-ms-expand {
   height: 190px;
   position: fixed;
   right: 0;
-  top: 50%;
+  top: 35%;
   display: none;
 }
 .btn.reserve-icon {
@@ -371,6 +373,7 @@ section {
   /* 下層ページのリード文 */
   .page-lead {
     font-size: 16px;
+    padding: 40px 0 190px;
   }
   /* パンクズ */
   .breadcrumbs {
@@ -790,6 +793,9 @@ section {
 /* -------------------------------------------- */
 /* cta */
 /* -------------------------------------------- */
+.cta {
+  padding-top: 100px;
+}
 .cta__image {
   width: 58%;
   display: block;
@@ -812,6 +818,7 @@ section {
   .cta {
     max-width: 708px;
     margin: 0 auto;
+    padding-top: 290px;
   }
   .cta__image {
     width: 100%;
@@ -1001,16 +1008,388 @@ section {
 }
 /* Hover Event */
 /* -------------------------------------------- */
-/*  */
+/* about */
 /* -------------------------------------------- */
+.page__wrap {
+  position: relative;
+}
+.page__image-wrap img {
+  width: 100%;
+}
+.page__image-desc {
+  font-size: 10px;
+  transform: scale(0.8);
+  margin-top: 10px;
+  transform-origin: 0 0;
+  display: block;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.about__cont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.tar {
+  text-align: right;
+}
+
+/* 縦組み */
+.tver {
+  writing-mode: vertical-rl;
+}
+
+.pab {
+  position: absolute;
+}
+
+.about-img-01 {
+  margin-right: 17.3333333333vw;
+}
+.about-img-02 {
+  margin-top: -16vw;
+  margin-right: calc(50% - 50vw);
+  margin-left: 51.7333333333vw;
+}
+.about-img-03 {
+  margin-right: 42.1333333333vw;
+  margin-top: -30.6666666667vw;
+}
+.about-img-04 {
+  margin-top: 50px;
+  margin-left: 22.1333333333vw;
+}
+.about-img-04 .page__image-desc {
+  top: 0;
+  left: -7%;
+  margin-top: 0;
+}
+.about-img-05 {
+  margin-right: 49.6vw;
+  margin-top: -3.2vw;
+}
+.about-img-06 {
+  margin-right: 17.6vw;
+  margin-left: calc(50% - 50vw);
+}
+.about-img-06 .page__image-desc {
+  transform-origin: 100% 0;
+}
+.about-img-07 .page__image-desc {
+  transform-origin: 100% 0;
+}
+
+@media (min-width: 765px) {
+  .page__image-desc {
+    font-size: 13px;
+    transform: scale(1);
+    margin-top: 26px;
+  }
+  /* 画像no.6, no.7のコンテナ */
+  .about__cont {
+    margin-top: 116px;
+  }
+  .about-img-01 {
+    max-width: 660px;
+    margin-right: auto;
+    margin-right: 26.6666666667vw;
+    left: -4.8611111111vw;
+  }
+  .about-img-02 {
+    max-width: 362px;
+    margin-right: 0;
+    right: -4.8611111111vw;
+    margin-left: auto;
+    margin-top: -10.8333333333vw;
+  }
+  .about-img-02 .page__image-desc {
+    text-align: right;
+  }
+  .about-img-03 {
+    max-width: 605px;
+    margin-top: -20.2083333333vw;
+    margin-left: 5.9027777778vw;
+    margin-right: 22.7777777778vw;
+  }
+  .about-img-03 .page__image-desc {
+    position: relative;
+    top: 0;
+    left: -50px;
+  }
+  .about-img-04 {
+    max-width: 704px;
+    margin-left: 23.6805555556vw;
+    margin-top: 220px;
+  }
+  .about-img-04 .page__image-desc {
+    top: 0;
+    left: -6%;
+    margin-top: 0;
+  }
+  .about-img-05 {
+    max-width: 413px;
+    margin-right: 0;
+    margin-top: 0;
+    margin-right: 43.75vw;
+    margin-top: -9.7222222222vw;
+  }
+  .about-img-06 {
+    max-width: 400px;
+    margin-right: 15.9722222222vw;
+    margin-left: 0;
+    left: -4.8611111111vw;
+  }
+  .about-img-07 {
+    max-width: 485px;
+  }
+}
 /* Hover Event */
 /* -------------------------------------------- */
-/*  */
+/* style */
 /* -------------------------------------------- */
+.style__type {
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  position: absolute;
+}
+
+.style-img-01 {
+  margin-left: calc(50% - 50vw);
+  margin-right: 14.6666666667vw;
+}
+.style-img-01 .style__type {
+  top: 0;
+  right: -6%;
+  margin-top: 0;
+}
+.style-img-02 {
+  margin-left: 28.8vw;
+  margin-top: -21.3333333333vw;
+}
+.style-img-02 .page__image-desc {
+  line-height: 1.6;
+}
+.style-img-03 {
+  margin-right: calc(50% - 50vw);
+  margin-top: 30px;
+}
+.style-img-04 {
+  margin-left: calc(50% - 50vw);
+  margin-top: 50px;
+}
+.style-img-04 .style__type {
+  right: 0;
+  top: 20px;
+}
+.style-img-04 .page__image-desc {
+  padding-left: 30px;
+}
+.style-img-05 {
+  margin-left: 28vw;
+  margin-top: 30px;
+}
+.style-img-06 {
+  margin-right: 44.8vw;
+  margin-top: -51.7333333333vw;
+}
+.style-img-07 {
+  margin-top: 80px;
+  margin-left: calc(50% - 50vw);
+  margin-right: 2.6666666667vw;
+}
+.style-img-07 .page__image-desc {
+  position: absolute;
+  left: 10%;
+  top: -25px;
+}
+.style-img-08 {
+  margin-right: 37.8666666667vw;
+  margin-left: 8.5333333333vw;
+  margin-top: -10.1333333333vw;
+}
+.style-img-08 .style__type {
+  top: 0;
+  right: -8%;
+  margin-top: 0;
+  display: none;
+}
+.style-img-09 {
+  margin-right: 8vw;
+  margin-left: 39.2vw;
+  margin-top: -32.8vw;
+}
+
+@media (min-width: 765px) {
+  .style-img-01 {
+    max-width: 644px;
+    margin-left: 10.3472222222vw;
+    margin-right: 17.7777777778vw;
+  }
+  .style-img-02 {
+    max-width: 320px;
+    margin-left: 50.3472222222vw;
+    margin-top: -24.2361111111vw;
+  }
+  .style-img-03 {
+    margin-right: auto;
+    margin-top: -3.6805555556vw;
+    max-width: 605px;
+  }
+  .style-img-04 {
+    margin-top: 180px;
+    margin-left: 21.0416666667vw;
+    max-width: 743px;
+  }
+  .style-img-04 .page__image-desc {
+    padding-left: 30px;
+    text-align: right;
+  }
+  .style-img-05 {
+    margin-left: 0;
+    max-width: 383px;
+    margin-right: 45.625vw;
+    margin-top: -54.7916666667vw;
+  }
+  .style-img-06 {
+    max-width: 303px;
+    margin-left: 8.4027777778vw;
+    margin-right: 43.1944444444vw;
+    margin-top: -1.3194444444vw;
+  }
+  .style-img-07 {
+    max-width: 628px;
+    margin-right: 30.8333333333vw;
+    margin-left: -1.8055555556vw;
+    margin-top: 178px;
+  }
+  .style-img-07 .page__image-desc {
+    top: 100%;
+    left: 15%;
+  }
+  .style-img-08 {
+    max-width: 287px;
+    margin-left: 38.5416666667vw;
+    margin-right: 14.1666666667vw;
+    margin-top: -50.4166666667vw;
+  }
+  .style-img-08 .style__type {
+    display: block;
+  }
+  .style-img-09 {
+    max-width: 309px;
+    margin-top: -3.2638888889vw;
+    margin-right: 4.8611111111vw;
+    margin-left: 46.3194444444vw;
+  }
+}
 /* Hover Event */
 /* -------------------------------------------- */
-/*  */
+/* menu */
 /* -------------------------------------------- */
+.menu__wrap {
+  padding: 0 25px;
+}
+.menu__flex {
+  display: flex;
+  justify-content: space-between;
+}
+.menu__title {
+  font-size: 12px;
+  border-bottom: 1px solid #AA9F9F;
+  padding-bottom: 10px;
+  font-weight: 400;
+  margin-top: 30px;
+}
+.menu__price {
+  font-weight: 700;
+}
+.menu__list {
+  margin-top: 25px;
+  font-size: 12px;
+}
+.menu__list-item {
+  border-bottom: 0.5px solid #D3D3D3;
+  padding: 15px 0 10px;
+}
+.menu__other {
+  margin-top: 40px;
+}
+.menu__tax {
+  font-size: 10px;
+  color: #7B7B7B;
+  margin-top: 150px;
+  margin-top: 50px;
+  line-height: 1;
+}
+.menu__attention {
+  font-size: 10px;
+  color: #7B7B7B;
+  margin-top: 30px;
+  margin-top: 15px;
+}
+
+.mt60 {
+  margin-top: 60px;
+}
+
+@media (min-width: 765px) {
+  .menu__wrap {
+    padding: 0;
+  }
+  .menu__cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 50px;
+  }
+  .menu__cont.--other {
+    max-height: 630px;
+  }
+  .menu__cont.--other .menu__title:first-child {
+    margin-top: 0;
+  }
+  .menu__title {
+    font-size: 16px;
+    width: 38.5%;
+  }
+  .menu__list {
+    width: 38.5%;
+    font-size: 16px;
+  }
+  .menu__list-item {
+    padding: 30px 0 15px;
+  }
+  .menu__list-item:first-child {
+    padding-top: 0;
+  }
+  .menu__other {
+    margin-top: 0px;
+  }
+  .menu__bottom {
+    width: 38.5%;
+  }
+  .menu__tax {
+    font-size: 15px;
+    margin-top: 150px;
+  }
+  .menu__attention {
+    font-size: 15px;
+    margin-top: 30px;
+  }
+  .mt60 {
+    margin-top: 150px;
+  }
+  .mt150 {
+    margin-top: 150px;
+  }
+  .mra {
+    margin-left: auto;
+  }
+}
 /* Hover Event */
 /* -------------------------------------------- */
 /*  */
