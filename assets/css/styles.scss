@@ -75,17 +75,11 @@ select::-ms-expand {
   display: none;
 }
 
-header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
-  // background-color: rgba(0,200,100,0.1);
-  // border: 1px solid rgba(0,0,0,0.1);
-}
-
 .inner{
   margin: 0 auto;
   max-width: 1100px;
   width: 100%;
   padding: 0 30px;
-  border: 1px solid pink;
 }
 
 /*----- 見出し -----*/
@@ -142,12 +136,6 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
   line-height: 1.6;
 }
 
-/* lead文 */
-.top-page_desc{
-  font-size: 12px;
-  margin-top: 40px;
-}
-
 /* 下層ページの見出し */
 .page-heading{
   font-size: 16px;
@@ -159,6 +147,22 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
   align-items: center;
 }
 
+/*----- Topページ -----*/
+/* lead文 */
+.top-page_desc{
+  font-size: 12px;
+  margin-top: 40px;
+}
+
+/* 画像の注釈 */
+.image-desc{
+  color: #9A9191;
+  font-size: 10px;
+  margin-top: 30px;
+  line-height: 1;
+}
+
+/*----- 下層ページ -----*/
 /* 下層ページのリード文 */
 .page-lead{
   font-size: 12px;
@@ -203,16 +207,9 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
   }
 }
 
+/* メインビジュアル */
 .page-mv{
   margin-left: calc(50% - 50vw);
-}
-
-/* 画像の注釈 */
-.image-desc{
-  color: #9A9191;
-  font-size: 10px;
-  margin-top: 30px;
-  line-height: 1;
 }
 
 /*----- ボタン関連-----*/
@@ -258,6 +255,7 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
       right: 0;
       top: 35%;
       display: none;
+      z-index: 1;
     }
   }
   
@@ -326,9 +324,17 @@ header,main,section,footer, div, ul, li, h1,h2,h3,dl,dt,dd{
   }
 }
 
+/* topへ戻る */
+.toTop{
+  cursor: pointer;
+  position: absolute;
+  right: 30px;
+  top: 46px;
+}
+
 /*----- 余白 -----*/
-section{
-  padding: 50px 0;
+main{
+  padding-top: 103px;
 }
 
 .mt10{
@@ -364,6 +370,10 @@ section{
 }
 
 @media (min-width: 765px) {
+  main{
+    padding-top: 170px;
+  }
+
   .inner{
     padding: 0 27px;
   }
@@ -488,6 +498,14 @@ section{
     }
   }
 
+  /* topへ戻る */
+.toTop{
+  cursor: pointer;
+  position: absolute;
+  right: 86px;
+  top: 350px;
+}
+
   .mt40 {
     margin-top: 75px;
   }
@@ -507,7 +525,25 @@ section{
   .pc-mt180{
     margin-top: 180px;
   }
+}
 
+/* Hover Event */
+@media (hover: hover){
+  .nav-list__link,
+  .sns-list__link,
+  .footer-sns__link,
+  .btn.--reserve,
+  .btn.--cta{
+    transition: opacity .4s;
+
+    &:hover{
+      opacity: .6;
+    }
+  }
+
+  .btn.--reserve{
+
+  }
 }
 
 /* -------------------------------------------- */
@@ -521,6 +557,9 @@ section{
     justify-content: space-between;
     align-items: center;
     padding: 30px 30px 40px;
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    z-index: 2;
   }
 }
 
@@ -625,23 +664,9 @@ section{
 
 }
 
-/* Hover Event */
-@media (hover: hover){
-
-}
-
 /* -------------------------------------------- */
 /* nav関連 */
 /* -------------------------------------------- */
-/* nav共通 */
-.nav{
-
-}
-
-
-
-.header-nav{
-}
 
 /* ハンバーガーメニュー */
 .burger{
@@ -651,9 +676,6 @@ section{
   color: #000;
   cursor: pointer;
   z-index: 3;
-
-  // border: 1px solid #000;
-
 }
 
 /* ハンバーガーメニューのバー */
@@ -709,30 +731,75 @@ section{
 
 }
 
-/* Hover Event */
-@media (hover: hover){
-
-}
-
 /* -------------------------------------------- */
 /* mv */
 /* -------------------------------------------- */
 .mv{
-  padding-bottom: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
 
   &__catch{
     text-align: center;
     font-size: 13px;
+    padding-bottom: 30px;
   }
 }
 
-.slide{
-  margin-top: 40px;
-  padding: 0 40px;
+/* MVスライダー */
+.Mvswiper{
+  width: 100%;
+  .swiper-wrapper{
+    padding-bottom: 80px;
+  }
+  
+  .swiper-slide {
+    opacity: 0.4;
+    overflow: hidden;
+    transition: .7s;
+  }
+  
+  .swiper-horizontal>.swiper-pagination-progressbar,
+  .swiper-pagination-progressbar.swiper-pagination-horizontal{
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    top: 99%;
+    height: 0.5px;
+  }
+  
+  .swiper-slide-active {
+    opacity: 1;
+    z-index: 1;
+    transform: scale(1.3); /* スライドの大きさ調整 */
+  }
+  
+  /* バーの背景色 */
+  .swiper-pagination-progressbar {
+    background-color: #C3C3C3;
+  }
+  
+  /* バーの色 */
+  .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    background-color: #000;
+  }
 }
 
-@media (min-width: 765px) {
 
+@media (min-width: 765px) {
+  /* MVスライダー */
+  .Mvswiper{
+    .swiper-wrapper{
+      padding-bottom: 140px;
+    }
+    
+    .swiper-horizontal>.swiper-pagination-progressbar,
+    .swiper-pagination-progressbar.swiper-pagination-horizontal{
+      width: 100px;
+      top: 95%;
+      height: 1px;
+    }
+
+  }
 
 }
 
@@ -745,6 +812,7 @@ section{
 /* top-about */
 /* -------------------------------------------- */
 .top-about{
+  margin-top: 100px;
 
   &__wrap{
     
@@ -763,6 +831,8 @@ section{
 
 @media (min-width: 765px) {
   .top-about{
+    margin-top: 150px;
+
     &__cont{
       display: flex;
     }
@@ -787,26 +857,38 @@ section{
 /* top-style */
 /* -------------------------------------------- */
 .top-style{
+  margin-top: 100px;
+
   &__slide-desc{
-    margin-top: 35px;
+    padding: 35px 0 10px;
     font-size: 10px;
     font-weight: 300;
     line-height: 1;
     letter-spacing: 0.1em;
   }
-
+  
   &__body{
-    border: 1px solid #000;
+    max-width: 500px;
+  }
+}
+
+/* スタイルスライダー */
+.styleswiper{
+  margin-right: calc(50% - 50vw);
+  .swiper-slide{
+    max-width: 260px;
   }
 }
 
 @media (min-width: 765px) {
-
-
-}
-
-/* Hover Event */
-@media (hover: hover){
+  .top-style{
+    margin-top: 180px;
+  }
+  .styleswiper{
+    .swiper-slide{
+      max-width: 497px;
+    }
+  }
 
 }
 
@@ -814,6 +896,8 @@ section{
 /* top-menu */
 /* -------------------------------------------- */
 .top-menu{
+  margin-top: 60px;
+
   &__left{
     margin-left: calc(50% - 50vw);
   }
@@ -821,6 +905,7 @@ section{
 
 @media (min-width: 765px) {
   .top-menu{
+    margin-top: 110px;
 
     &__cont{
       display: flex;
@@ -842,15 +927,12 @@ section{
 
 }
 
-/* Hover Event */
-@media (hover: hover){
-
-}
-
 /* -------------------------------------------- */
 /* top-bg */
 /* -------------------------------------------- */
 .top-bg{
+  margin-top: 100px;
+
   img{
     max-height: 562px;
     display: block;
@@ -859,13 +941,17 @@ section{
 }
 
 @media (min-width: 765px) {
-
+  .top-bg{
+    margin-top: 180px;
+  }
 }
 
 /* -------------------------------------------- */
 /* top-salon */
 /* -------------------------------------------- */
 .top-salon{
+  margin-top: 40px;
+
   &__right{
     margin-right: calc(50% - 50vw);
   }
@@ -877,6 +963,7 @@ section{
 
 @media (min-width: 765px) {
   .top-salon{
+    margin-top: 130px;
 
     &__cont{
       display: flex;
@@ -893,15 +980,11 @@ section{
 
 }
 
-/* Hover Event */
-@media (hover: hover){
-
-}
-
 /* -------------------------------------------- */
 /* top-access */
 /* -------------------------------------------- */
 .top-access{
+  margin-top: 100px;
 
   &__wrap{
     padding-left: 36px;
@@ -967,6 +1050,7 @@ section{
 
 @media (min-width: 765px) {
   .top-access{
+    margin-top: 180px;
 
     &__cont{
       display: flex;
@@ -1081,6 +1165,7 @@ section{
   padding: 46px 0;
   line-height: 1.4;
   margin-top: 100px;
+  position: relative;
 
   &-list__title {
     color:#656565;
@@ -1132,6 +1217,7 @@ section{
 
   &__map{
     margin-top: 20px;
+    display: block;
 
     &::before{
       content:"";
@@ -1801,6 +1887,119 @@ section{
 
   .mra{
     margin-left: auto;
+  }
+
+}
+
+/* Hover Event */
+@media (hover: hover){
+
+}
+
+/* -------------------------------------------- */
+/* salon */
+/* -------------------------------------------- */
+.salon-img{
+  &-01{
+    text-align: right;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    
+    .page__image-desc{
+      transform-origin: 100%;
+      padding-right: 30px;
+    }
+  }
+  
+  &-02{
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(13 / 375 *100vw);
+    margin-top: 60px;
+  }
+  
+  &-03{
+    margin-right: calc(50% - 50vw);
+    margin-left: calc(89 / 375 *100vw);
+    margin-top: 92px;
+  }
+
+  &-04{
+    margin-left: calc(50% - 50vw);
+    margin-top: 97px;
+
+    .page__image-desc{
+      transform-origin: 100%;
+      text-align: right;
+    }
+  }
+
+  &-05{
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    margin-top: 115px;
+
+    .page__image-desc{
+      padding-left: 30px;
+    }
+  }
+}
+
+@media (min-width: 765px) {
+  .salon-img{
+    &-01{
+      max-width: 851px;
+      margin-left: 0;
+      margin-right: calc(195 / 1440 *100vw);
+      
+      .page__image-desc{
+        position: absolute;
+        top: 0;
+        right: -7%;
+        margin-top: 0;
+        writing-mode: vertical-rl;
+        letter-spacing: 0.5em;
+      }
+    }
+    
+    &-02{
+      max-width: 761px;
+      margin-right: 0;
+      margin-left: calc(285 / 1440 *100vw);
+      margin-top: 180px;
+    }
+    
+    &-03{
+      max-width: 383px;
+      margin-right: calc(604 / 1440 *100vw);
+      margin-left: calc(58 / 1440 *100vw);
+      margin-top: calc(-353 / 1440 *100vw);
+      
+      .page__image-desc{
+        text-align: right;
+      }
+    }
+    
+    &-04{
+      margin-top: 130px;
+      margin-left: calc(262 / 1440 *100vw);
+      max-width: 800px;
+      margin-right: 0;
+  
+      .page__image-desc{
+        padding-right: calc(57 / 1440 *100vw);
+      }
+    }
+  
+    &-05{
+      max-width: 656px;
+      margin-left: calc(192 / 1440 *100vw);
+      margin-right: calc(192 / 1440 *100vw);
+      margin-top: 180px;
+  
+      .page__image-desc{
+        padding-left: 0px;
+      }
+    }
   }
 
 }

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/swiper-bundle.css">
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="assets/css/styles.scss">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css">
@@ -36,7 +37,7 @@
       <div class="menu">
 
         <div class="btn-wrap">
-          <a href="" class="btn --reserve">Reserve</a>
+          <a href="https://stekina.com/profile/F8DL-ER54" class="btn --reserve">Reserve</a>
         </div>
 
         <nav class="nav header-nav opensans textuppercase">
@@ -45,13 +46,13 @@
             <li class="nav-list__item header-nav__item"><a href="style.html" class="nav-list__link header-nav__link">style</a></li>
             <li class="nav-list__item header-nav__item"><a href="menu.html" class="nav-list__link header-nav__link">menu</a></li>
             <li class="nav-list__item header-nav__item"><a href="salon.html" class="nav-list__link header-nav__link">salon</a></li>
-            <li class="nav-list__item header-nav__item"><a href="#" class="nav-list__link header-nav__link">access</a></li>
+            <li class="nav-list__item header-nav__item"><a href="salon.html#access" class="nav-list__link header-nav__link">access</a></li>
           </ul>
         </nav>
 
         <ul class="sns-list header__sns-list">
-          <li class="sns-list__item"><a href="#" class="sns-list__link"><img src="assets/images/icons-youtube.png" alt=""  class="sns-list__image"></a></li>
-          <li class="sns-list__item"><a href="#"  class="sns-list__link"><img src="assets/images/icons-instagram.png" alt=""  class="sns-list__image"></a></li>
+          <li class="sns-list__item"><a href="https://www.youtube.com/@free-lanceryomurayama1139" target="_blank" class="sns-list__link"><img src="assets/images/icons-youtube.png" alt=""  class="sns-list__image"></a></li>
+          <li class="sns-list__item"><a href="https://www.instagram.com/ryo_mens.hair/" target="_blank" class="sns-list__link"><img src="assets/images/icons-instagram.png" alt=""  class="sns-list__image"></a></li>
           <li class="sns-list__item"><a href="#"  class="sns-list__link"><img src="assets/images/icons-line.png" alt=""  class="sns-list__image"></a></li>
         </ul>
       </div>
@@ -62,13 +63,21 @@
   </header>
 
   <main>
-    <!-- <div class="mv">
+    <div class="mv">
       <p class="mv__catch">ラフな髪型でラフにお洒落しよう。</p>
 
-      <div class="slide">
-        <img src="assets/images/mv-image-01.jpg" alt="">
+      <div class="swiper Mvswiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="assets/images/mv-image-01.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="assets/images/mv-image-02.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="assets/images/mv-image-03.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="assets/images/mv-image-04.jpg" alt=""></div>
+        </div>
+        <!-- /swiper-wrapper -->
+        <div class="swiper-pagination"></div>
       </div>
-    </div> -->
+      <!-- /styleswiper -->
+    </div> 
     <!-- mv -->
 
     <section class="top-about">
@@ -115,11 +124,21 @@
         <div class="top-style__wrap">
           <h2 class="heading top-page-heading en border mt50">style<span class="jp">スタイル</span></h2>
 
-          <p class="top-style__slide-desc opensans">Style01  center pert</p>
-
-          <div>
-            <img src="assets/images/style-img-01.jpg" alt="">
+          <div class="swiper styleswiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><p class="top-style__slide-desc opensans">STYLE01  center pert</p><img src="assets/images/slide-img-01.jpg" alt=""></div>
+              <div class="swiper-slide"><p class="top-style__slide-desc opensans">STYLE02  Mash</p><img src="assets/images/slide-img-02.jpg" alt=""></div>
+              <div class="swiper-slide"><p class="top-style__slide-desc opensans">STYLE03  Berry short</p><img src="assets/images/slide-img-03.jpg" alt=""></div>
+            </div>
+            <!-- /swiper-wrapper -->
           </div>
+          <!-- /styleswiper -->
+
+          <!-- <p class="top-style__slide-desc opensans">Style01  center pert</p> -->
+
+          <!-- <div>
+            <img src="assets/images/style-img-01.jpg" alt="">
+          </div> -->
 
           <div class="top-style__body">
             <h3 class="sub-heading">ラフな髪型をファッションに合わせて提案します。</h3>
@@ -316,7 +335,7 @@
             <p class="footer-access__name">シェアサロン「 One day 」</p>
             <p class="footer-access__postnum">〒 150-0001</p>
             <p class="footer-access__address">東京都渋谷区神宮前 5-42-17<br class="pc-none">コーポ青葉 101</p>
-            <p class="footer-access__map">Google map</p>
+            <a href="" class="footer-access__map">Google map</a>
           </div>
         </div>
         <!-- footer-access -->
@@ -330,7 +349,7 @@
               <li class="nav-list__item footer-nav__item"><a href="style.html" class="nav-list__link footer-nav__link">style</a></li>
               <li class="nav-list__item footer-nav__item"><a href="menu.html" class="nav-list__link footer-nav__link">menu</a></li>
               <li class="nav-list__item footer-nav__item"><a href="salon.html" class="nav-list__link footer-nav__link">salon</a></li>
-              <li class="nav-list__item footer-nav__item"><a href="#" class="nav-list__link footer-nav__link">access</a></li>
+              <li class="nav-list__item footer-nav__item"><a href="salon.html#access" class="nav-list__link footer-nav__link">access</a></li>
             </ul>
           </nav>
         </div>
@@ -340,9 +359,9 @@
           <p class="footer-list__title textuppercase">sns</p>
   
           <ul class="footer-sns__list column-wrap">
-            <li class="footer-sns__item"><a href="" class="footer-sns__link"><img src="assets/images/icons-instagram.png" alt="" class="footer-sns__image">instagram</a></li>
+            <li class="footer-sns__item"><a href="https://www.instagram.com/ryo_mens.hair/" target="_blank" class="footer-sns__link"><img src="assets/images/icons-instagram.png" alt="" class="footer-sns__image">instagram</a></li>
             <li class="footer-sns__item"><a href="" class="footer-sns__link"><img src="assets/images/icons-line.png" alt="" class="footer-sns__image">LINE</a></li>
-            <li class="footer-sns__item"><a href="" class="footer-sns__link"><img src="assets/images/icons-youtube.png" alt="" class="footer-sns__image">Youtube</a></li>
+            <li class="footer-sns__item"><a href="https://www.youtube.com/@free-lanceryomurayama1139" target="_blank" class="footer-sns__link"><img src="assets/images/icons-youtube.png" alt="" class="footer-sns__image">Youtube</a></li>
           </ul>
         </div>
         <!-- footer-sns-wrap -->
@@ -354,15 +373,20 @@
     <!-- inner -->
 
     <div class="btn-wrap">
-      <a href="" class="btn --reserve spfixed reserve-icon">reserve</a>
+      <a href="https://stekina.com/profile/F8DL-ER54" class="btn --reserve spfixed reserve-icon">reserve</a>
     </div>
 
     <div class="btn-wrap">
-      <a href="" class="btn --reserve pcfixed">reserve</a>
+      <a href="https://stekina.com/profile/F8DL-ER54" class="btn --reserve pcfixed">reserve</a>
+    </div>
+
+    <div id="toTop" class="toTop">
+      <img src="assets/images/toTop-sp.svg" alt="">
     </div>
 
   </footer>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="assets/js/swiper-bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 
