@@ -27,7 +27,7 @@ $(function(){
 
     breakpoints: {
       768: {
-        spaceBetween: 150,
+        spaceBetween: 50,
         slidesPerView: 2.75,
       }
     },

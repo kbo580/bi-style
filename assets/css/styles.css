@@ -306,10 +306,6 @@ select::-ms-expand {
 }
 
 /*----- 余白 -----*/
-main {
-  padding-top: 103px;
-}
-
 .mt10 {
   margin-top: 10px;
 }
@@ -341,9 +337,6 @@ main {
 }
 
 @media (min-width: 765px) {
-  main {
-    padding-top: 170px;
-  }
   .inner {
     padding: 0 27px;
   }
@@ -489,7 +482,6 @@ main {
   justify-content: space-between;
   align-items: center;
   padding: 30px 30px 40px;
-  position: fixed;
   background-color: rgb(255, 255, 255);
   z-index: 2;
 }
@@ -651,10 +643,9 @@ main {
   /* バーの背景色 */
   /* バーの色 */
 }
-.Mvswiper .swiper-wrapper {
-  padding-bottom: 80px;
-}
 .Mvswiper .swiper-slide {
+  padding-bottom: 40px;
+  margin-top: 80px;
   opacity: 0.4;
   overflow: hidden;
   transition: 0.7s;
@@ -670,7 +661,7 @@ main {
 .Mvswiper .swiper-slide-active {
   opacity: 1;
   z-index: 1;
-  transform: scale(1.3); /* スライドの大きさ調整 */
+  transform: scale(1.2); /* スライドの大きさ調整 */
 }
 .Mvswiper .swiper-pagination-progressbar {
   background-color: #C3C3C3;
@@ -680,9 +671,26 @@ main {
 }
 
 @media (min-width: 765px) {
+  .mv {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .mv__catch {
+    font-size: 13px;
+    padding-bottom: 30px;
+    position: absolute;
+    writing-mode: vertical-lr;
+    left: 0px;
+    letter-spacing: 0.2em;
+  }
   /* MVスライダー */
   .Mvswiper .swiper-wrapper {
     padding-bottom: 140px;
+    width: 681px;
+  }
+  .Mvswiper .swiper-slide {
+    padding-left: 26px;
+    padding-bottom: 60px;
   }
   .Mvswiper .swiper-horizontal > .swiper-pagination-progressbar,
   .Mvswiper .swiper-pagination-progressbar.swiper-pagination-horizontal {
