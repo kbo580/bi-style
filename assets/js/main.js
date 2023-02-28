@@ -9,6 +9,24 @@ $(function(){
       scrollTop: 0 }, 300);
   });
 
+  //--------------- 下からフェードイン ----------------
+  function fadeUpAnime(){
+    $('.fadeUp').each(function(){ 
+      var elemPos = $(this).offset().top; 
+      var scroll = $(window).scrollTop();
+      var windowHeight = $(window).height();
+      if (scroll >= elemPos - windowHeight){
+      $(this).addClass('fadeUpAnime');
+      }
+    });
+  }
+  
+  $(window).on('load scroll', function (){
+    fadeUpAnime();
+  });
+
+  //--------------- swiper ----------------
+
   var swiper = new Swiper('.Mvswiper', {
     loop: true,
     centeredSlides: true,
@@ -28,7 +46,7 @@ $(function(){
     breakpoints: {
       768: {
         spaceBetween: 50,
-        slidesPerView: 2.75,
+        slidesPerView: 3,
       }
     },
   });

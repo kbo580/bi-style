@@ -730,6 +730,7 @@ select::-ms-expand {
 .mv{
   padding-left: 40px;
   padding-right: 40px;
+  position: relative;
 
   &__catch{
     text-align: center;
@@ -742,15 +743,13 @@ select::-ms-expand {
 .Mvswiper{
   width: 100%;
   .swiper-wrapper{
-
+    padding-bottom: calc(20 / 375 *100vw);
   }
   
   .swiper-slide {
-    padding-bottom: 40px;
-    margin-top: 80px;
     opacity: 0.4;
     overflow: hidden;
-    transition:  .7s;
+    transition:  opacity .7s;
   }
   
   .swiper-horizontal>.swiper-pagination-progressbar,
@@ -765,7 +764,6 @@ select::-ms-expand {
   .swiper-slide-active {
     opacity: 1;
     z-index: 1;
-    transform: scale(1.2); /* スライドの大きさ調整 */
   }
   
   /* バーの背景色 */
@@ -779,31 +777,77 @@ select::-ms-expand {
   }
 }
 
+//----- スクロールダウン -----
+//全体の位置
+.scrolldown{
+  position:absolute;
+  right: 15%;
+  bottom:0%;
+  height:72px;
+  display: none;
+
+  //文字
+  &__letter{
+    position: absolute;
+    left:-5px;
+    top: -50px;
+    transform: rotate(180deg);
+    color: #333;
+    font-size: rem(12);
+    letter-spacing: 0.05em;
+    writing-mode: vertical-rl;
+  }
+
+  // 線
+  &::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0.5px;
+    height: 100%;
+    background: #333;
+  }
+}
 
 @media (min-width: 765px) {
   .mv{
-    padding-left: 40px;
-    padding-right: 40px;
+    height: calc(100vh - 170px);
   
     &__catch{
-      font-size: 13px;
-      padding-bottom: 30px;
+      font-size: 16px;
       position: absolute;
       writing-mode: vertical-lr;
-      left: 0px;
+      left: 27%;
+      top: 0;
       letter-spacing: 0.2em;
+      z-index: 2;
     }
   }
 
   /* MVスライダー */
   .Mvswiper{
     .swiper-wrapper{
-      padding-bottom: 140px;
-      width: 681px;
+      padding-bottom: 10%;
+      width: 100%;
+      height: 540px;
     }
+    
     .swiper-slide {
-      padding-left: 26px;
-      padding-bottom: 60px;
+      height: 100%;
+      width: 100%;
+      transform:scale(0.55, 0.7) rotate(-4deg);
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .swiper-slide-active {
+      opacity: 1;
+      z-index: 1;
+      transform: scaleX(1.4) rotate(0deg);
     }
     
     .swiper-horizontal>.swiper-pagination-progressbar,
@@ -813,11 +857,9 @@ select::-ms-expand {
       height: 1px;
     }
   }
-
-}
-
-/* Hover Event */
-@media (hover: hover){
+  .scrolldown{
+    display: block;
+  }
 
 }
 
@@ -827,20 +869,11 @@ select::-ms-expand {
 .top-about{
   margin-top: 100px;
 
-  &__wrap{
-    
-  }
-  
   &__left{
     margin-left: calc(50% - 50vw);
     padding-bottom: 10px;
   }
-
-  &__right{
-
-  }
 }
-
 
 @media (min-width: 765px) {
   .top-about{
@@ -858,11 +891,6 @@ select::-ms-expand {
       padding-left: 30px;
     }
   }
-
-}
-
-/* Hover Event */
-@media (hover: hover){
 
 }
 
@@ -897,6 +925,7 @@ select::-ms-expand {
   .top-style{
     margin-top: 180px;
   }
+
   .styleswiper{
     .swiper-slide{
       max-width: 497px;
@@ -922,14 +951,6 @@ select::-ms-expand {
 
     &__cont{
       display: flex;
-    }
-
-    &__image{
-
-    }
-
-    &__left{
-
     }
 
     &__right{
@@ -963,7 +984,7 @@ select::-ms-expand {
 /* top-salon */
 /* -------------------------------------------- */
 .top-salon{
-  margin-top: 40px;
+  margin-top: 100px;
 
   &__right{
     margin-right: calc(50% - 50vw);
@@ -976,7 +997,7 @@ select::-ms-expand {
 
 @media (min-width: 765px) {
   .top-salon{
-    margin-top: 130px;
+    margin-top: 170px;
 
     &__cont{
       display: flex;
@@ -1452,21 +1473,25 @@ select::-ms-expand {
 
 .about-img{
   &-01{
+    width: calc(250/375*100vw);
     margin-right: calc(65 / 375 *100vw);
   }
 
   &-02{
+    width: calc(151/375*100vw);
     margin-top:  calc(-60 / 375 *100vw);
     margin-right: calc(50% - 50vw);
     margin-left:  calc(194 / 375 *100vw);
   }
   
   &-03{
+    width: calc(157/375*100vw);
     margin-right: calc(158 / 375 *100vw);
     margin-top: calc(-115 / 375 *100vw);
   }
 
   &-04{
+    width: calc(232/375*100vw);
     margin-top: 50px;
     margin-left: calc(83 / 375 *100vw);
 
@@ -1478,11 +1503,13 @@ select::-ms-expand {
   }
 
   &-05{
+    width: calc(130/375*100vw);
     margin-right: calc(186 / 375 *100vw);
     margin-top: calc(-12 / 375 *100vw);;
   }
 
   &-06{
+    width: calc(117/375*100vw);
     margin-right: calc(66 / 375 *100vw);
     margin-left: calc(50% - 50vw);
 
@@ -1492,6 +1519,7 @@ select::-ms-expand {
   }
   
   &-07{
+    width: calc(162/375*100vw);
     .page__image-desc{
       transform-origin: 100% 0;
     }
@@ -1515,14 +1543,14 @@ select::-ms-expand {
 
   .about-img{
     &-01{
-      max-width: 660px;
+      width: 660px;
       margin-right: auto;
       margin-right: calc(384 / 1440 *100vw);
       left: calc(-70 / 1440 *100vw);
     }
   
     &-02{
-      max-width: 362px;
+      width: 362px;
       margin-right: 0;
       right: calc(-70 / 1440 *100vw);
       margin-left: auto;
@@ -1534,7 +1562,7 @@ select::-ms-expand {
     }
     
     &-03{
-      max-width: 605px;
+      width: 605px;
       margin-top: calc(-291 / 1440 *100vw);
       margin-left: calc(85 / 1440 *100vw);
       margin-right: calc(328 /1440 * 100vw);
@@ -1547,7 +1575,7 @@ select::-ms-expand {
     }
   
     &-04{
-      max-width: 704px;
+      width: 704px;
       margin-left: calc(341 / 1440*100vw);
       margin-top: 220px;
   
@@ -1559,7 +1587,7 @@ select::-ms-expand {
     }
   
     &-05{
-      max-width: 413px;
+      width: 413px;
       margin-right: 0;
       margin-top: 0;
       margin-right: calc(630 / 1440 *100vw);
@@ -1567,7 +1595,7 @@ select::-ms-expand {
     }
   
     &-06{
-      max-width: 400px;
+      width: 400px;
       margin-right: calc(230 / 1440 *100vw);
       margin-left: 0;
       left: calc(-70 / 1440 *100vw);
@@ -1600,6 +1628,7 @@ select::-ms-expand {
 
 .style-img{
   &-01{
+    width: calc(290/375*100vw);
     margin-left: calc(50% - 50vw);
     margin-right: calc(55 / 375 *100vw);
 
@@ -1611,6 +1640,7 @@ select::-ms-expand {
   }
 
   &-02{
+    width: calc(207/375*100vw);
     margin-left: calc(108 / 375 *100vw);
     margin-top: calc(-80 / 375 *100vw);
 
@@ -1620,17 +1650,20 @@ select::-ms-expand {
   }
   
   &-03{
+    width: calc(345/375*100vw);
     margin-right: calc(50% - 50vw);
     margin-top: 30px;
   }
 
   &-04{
+    width: calc(315/375*100vw);
     margin-left: calc(50% - 50vw);
     margin-top: 50px;
+    z-index: 1;
 
     .style__type{
-      right: 0;
-      top: 20px;
+      right: -5%;
+      top: 5%;
     }
 
     .page__image-desc{
@@ -1640,16 +1673,19 @@ select::-ms-expand {
   }
 
   &-05{
+    width: calc(209/375*100vw);
     margin-left: calc(105 / 375 *100vw);
     margin-top: 30px;
   }
 
   &-06{
+    width: calc(149/375*100vw);
     margin-right: calc(168 / 375 *100vw);
     margin-top: calc(-194 / 375 *100vw);
   }
   
   &-07{
+    width: calc(294/375*100vw);
     margin-top: 80px;
     margin-left: calc(50% - 50vw);
     margin-right: calc(10 / 375 *100vw);
@@ -1662,6 +1698,7 @@ select::-ms-expand {
   }
 
   &-08{
+    width: calc(141/375*100vw);
     margin-right: calc(142 / 375 *100vw);
     margin-left: calc(32 / 375 *100vw);
     margin-top: calc(-38 / 375 *100vw);
@@ -1675,6 +1712,7 @@ select::-ms-expand {
   }
   
   &-09{
+    width: calc(138/375*100vw);
     margin-right: calc(30 / 375 *100vw);
     margin-left: calc(147 / 375 *100vw);
     margin-top: calc(-123 / 375 *100vw);
@@ -1689,50 +1727,57 @@ select::-ms-expand {
   
   .style-img{
     &-01{
-      max-width: 644px;
+      width: 644px;
       margin-left: calc(149 / 1440 *100vw);
       margin-right: calc(256 / 1440 *100vw);
     }
   
     &-02{
-      max-width: 320px;
+      width: 320px;
       margin-left: calc(725 / 1440 *100vw);
       margin-top: calc(-349 / 1440 *100vw);
     }
     
     &-03{
+      width: 605px;
       margin-right: auto;
-      margin-top: calc(-53 / 1440 *100vw);
-      max-width: 605px;
+      margin-top: 0;
+      padding-top: calc(-133 / 1440 *100vw);
+      margin-right: calc(441 / 1440 *100vw);
     }
   
     &-04{
+      width: 743px;
       margin-top: 180px;
       margin-left: calc(303 / 1440 *100vw);
-      max-width: 743px;
   
       .page__image-desc{
         padding-left: 30px;
         text-align: right;
       }
+
+      .style__type{
+        right: 0%;
+        top: 3%;
+      }
     }
   
     &-05{
+      width: 383px;
       margin-left: 0;
-      max-width: 383px;
       margin-right: calc(657 / 1440 *100vw);
       margin-top: calc(-789 / 1440 *100vw);
     }
     
     &-06{
-      max-width: 303px;
+      width: 303px;
       margin-left: calc(121 / 1440 *100vw);
       margin-right: calc(622 / 1440 *100vw);
       margin-top: calc(-19 / 1440 *100vw);
     }
     
     &-07{
-      max-width: 628px;
+      width: 628px;
       margin-right: calc(444 / 1440 *100vw);
       margin-left: calc(-26 / 1440 *100vw);
       margin-top: 178px;
@@ -1744,7 +1789,7 @@ select::-ms-expand {
     }
   
     &-08{
-      max-width: 287px;
+      width: 287px;
       margin-left: calc(555 / 1440 *100vw);
       margin-right: calc(204 / 1440 *100vw);
       margin-top: calc(-726 / 1440 *100vw);
@@ -1755,7 +1800,7 @@ select::-ms-expand {
     }
     
     &-09{
-      max-width: 309px;
+      width: 309px;
       margin-top: calc(-47 / 1440 *100vw);
       margin-right: calc(70 / 1440 *100vw);
       margin-left: calc(667 / 1440 *100vw);
@@ -1904,16 +1949,12 @@ select::-ms-expand {
 
 }
 
-/* Hover Event */
-@media (hover: hover){
-
-}
-
 /* -------------------------------------------- */
 /* salon */
 /* -------------------------------------------- */
 .salon-img{
   &-01{
+    width: calc(375/375*100vw);
     text-align: right;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
@@ -1925,18 +1966,21 @@ select::-ms-expand {
   }
   
   &-02{
+    width: calc(323/375*100vw);
     margin-left: calc(50% - 50vw);
     margin-right: calc(13 / 375 *100vw);
     margin-top: 60px;
   }
   
   &-03{
+    width: calc(256/375*100vw);
     margin-right: calc(50% - 50vw);
     margin-left: calc(89 / 375 *100vw);
     margin-top: 92px;
   }
 
   &-04{
+    width: calc(340/375*100vw);
     margin-left: calc(50% - 50vw);
     margin-top: 97px;
 
@@ -1947,6 +1991,7 @@ select::-ms-expand {
   }
 
   &-05{
+    width: calc(375/375*100vw);
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
     margin-top: 115px;
@@ -1960,7 +2005,7 @@ select::-ms-expand {
 @media (min-width: 765px) {
   .salon-img{
     &-01{
-      max-width: 851px;
+      width: 851px;
       margin-left: 0;
       margin-right: calc(195 / 1440 *100vw);
       
@@ -1975,14 +2020,14 @@ select::-ms-expand {
     }
     
     &-02{
-      max-width: 761px;
+      width: 761px;
       margin-right: 0;
       margin-left: calc(285 / 1440 *100vw);
       margin-top: 180px;
     }
     
     &-03{
-      max-width: 383px;
+      width: 383px;
       margin-right: calc(604 / 1440 *100vw);
       margin-left: calc(58 / 1440 *100vw);
       margin-top: calc(-353 / 1440 *100vw);
@@ -1995,7 +2040,7 @@ select::-ms-expand {
     &-04{
       margin-top: 130px;
       margin-left: calc(262 / 1440 *100vw);
-      max-width: 800px;
+      width: 800px;
       margin-right: 0;
   
       .page__image-desc{
@@ -2004,7 +2049,7 @@ select::-ms-expand {
     }
   
     &-05{
-      max-width: 656px;
+      width: 656px;
       margin-left: calc(192 / 1440 *100vw);
       margin-right: calc(192 / 1440 *100vw);
       margin-top: 180px;
@@ -2017,22 +2062,31 @@ select::-ms-expand {
 
 }
 
-/* Hover Event */
-@media (hover: hover){
-
-}
-
 /* -------------------------------------------- */
 /*  */
 /* -------------------------------------------- */
-
-
-@media (min-width: 765px) {
-
-
+/* 下からフェードイン */
+.fadeUpTrigger{
+  opacity: 0;
 }
 
-/* Hover Event */
-@media (hover: hover){
+.fadeUpAnime {
+  animation-name:fadeUpAnime;
+  animation-duration: 1s;
+  animation-fill-mode:forwards;
+  opacity:0;
+}
+
+@keyframes fadeUpAnime{
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+@media (min-width: 765px) {
+
 
 }
