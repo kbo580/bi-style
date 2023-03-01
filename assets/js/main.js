@@ -26,30 +26,39 @@ $(function(){
   });
 
   //--------------- swiper ----------------
+  var bar = document.querySelector('.progressbar_in');
+  var speed = 3000;
+  window.onload = function() {
+    var swiper = new Swiper('.Mvswiper', {
+      loop: true,
+      centeredSlides: true,
+      autoplay: {
+        delay: speed,
+        disableOnInteraction: false,
+      },
+      slidesPerView: '1',
+      spaceBetween: 30,
+      grabCursor: true,
 
-  var swiper = new Swiper('.Mvswiper', {
-    loop: true,
-    centeredSlides: true,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: true,
-    },
-    slidesPerView: '1',
-    spaceBetween: 30,
-    grabCursor: true,
-
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'progressbar',
-    },
-
-    breakpoints: {
-      768: {
-        spaceBetween: 50,
-        slidesPerView: 3,
+      breakpoints: {
+        768: {
+          spaceBetween: 50,
+          slidesPerView: 3,
+        }
+      },
+      on: {
+        slideChangeTransitionStart: function () {
+        bar.style.transitionDuration = '0s',
+        bar.style.transform = 'scaleX(0)'
+        },
+        slideChangeTransitionEnd: function () {
+        bar.style.transitionDuration = speed + 'ms',
+        bar.style.transform = 'scaleX(1)'
+        },
       }
-    },
-  });
+    });
+
+  }
 
 
   var swiper = new Swiper('.styleswiper', {
